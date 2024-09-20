@@ -1,0 +1,72 @@
+---
+  title: "Lab 00 - Hello IDS!"
+author: "Shane Chesen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+  
+  ### Load packages and data
+  
+  ```{r load-packages, message=FALSE}
+library(tidyverse) 
+```
+
+### Exercises 16-17
+
+We set up the data frame. Edit the data below to include information about your team members.
+
+```{r setup-tibble}
+team_data <- tibble(
+  name = c("Sam Prior", "Dimitri Bardanis", "Dimitri Agouridis", 
+           "Shane Chesen"),
+  github_username = c("S-Pri0r", "DimitrisBardanis", "dimitrisagourdis", 
+                      "shanechesen"), 
+  colour = c("darkorange", "darkgreen", "blue", 
+             "lightgreen",),
+  hobby = c("guitar", "tennis", "football", 
+            "traveling",),
+  favourite_number = c(73, 13, 21, 11,)
+)
+
+team_data
+```
+
+### Exercise 18
+
+We now work on visualising our data. 
+
+```{r bar-plot}
+p1 <- ggplot(data = team_data, 
+             mapping = aes(x = github_username, 
+                           y = favourite_number,
+                           fill = colour), 
+) +
+  geom_col() +
+  scale_fill_identity()
+p1
+```
+
+
+*Remove this text (including the stars), and add your answer for Exercise 18 here.*
+  
+  ### Exercises 19
+  
+  Change the text of the plot title and axis labels.
+
+```{r labelled-bar-plot}
+p1 + labs(x = "Insert text here", 
+          y = "Insert text here",
+          title = "Insert text here")
+```
+
+*Remove this text (including the stars), and add your answer for Exercise 19 here.*
+  
+  ### Exercise 20
+  
+  ```{r new-bar-plot}
+p2 <- ggplot(team_data, aes(x = hobby)) +
+  geom_bar()
+p2
+```
+
+*Remove this text (including the stars) and add your answer for Exercise 20 here.*
