@@ -26,7 +26,7 @@ team_data <- tibble(
   hobby = c("guitar", "tennis", "football", 
             "traveling",),
   favourite_number = c(73, 13, 21, 11,)
-  )
+)
 
 team_data
 ```
